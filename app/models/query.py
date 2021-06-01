@@ -54,9 +54,12 @@ class Stock:
             row += 1
         except:
           break
+
+        
         next = driver.find_element_by_xpath('//*[@id="scr-res-table"]/div[2]/button[3]/span/span').click()
-        sleep(3)
+        sleep(2)
+        
+
     driver.quit()
 
-    
     return jsonify(stocks)
