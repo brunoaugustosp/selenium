@@ -6,4 +6,6 @@ Email:augusto.han@gmail.com
 
 
 Rota de exemplo
-http://127.0.0.1:5000/stocks/Qatar
+http://127.0.0.1:5000/stocks/Argentina
+
+Obs: Desenvolvido em ambiente Windows
