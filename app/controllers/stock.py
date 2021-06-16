@@ -2,6 +2,13 @@ from app import *
 from app.models.query import Stock
 
 
+@app.route("/")
+def index():
+
+
+    return ('ALO MUNDO')
+
+
 
 @app.route("/stocks/<string:region>", methods=['GET'])
 @cache.cached(timeout=193)
