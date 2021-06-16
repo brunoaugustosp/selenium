@@ -15,8 +15,29 @@ class Stock:
     self.region = region
 
   def web_crawler(self):
+# WINDOWS
+    # driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
+# HEROKU
 
-    driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
+
+
+
+
+
+
+
+
+
+
+
+
     driver.get('https://finance.yahoo.com/screener/new')
     sleep(4)
     btn_reg = driver.find_element_by_xpath('//*[@id="screener-criteria"]/div[2]/div[1]/div[1]/div[1]/div/div[2]/ul/li[1]/button').click()
